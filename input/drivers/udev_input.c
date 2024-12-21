@@ -702,6 +702,7 @@ static void udev_mouse_set_x(udev_input_mouse_t *mouse, int32_t x, bool abs)
    if (abs)
    {
       mouse->x_rel += x - mouse->x_abs;
+      mouse->x_rel = mouse->x_rel * 10;
       mouse->x_abs = x;
    }
    else
@@ -745,6 +746,7 @@ static void udev_mouse_set_y(udev_input_mouse_t *mouse, int32_t y, bool abs)
    if (abs)
    {
       mouse->y_rel += y - mouse->y_abs;
+      mouse->y_rel = mouse->y_rel * 10;
       mouse->y_abs = y;
    }
    else
