@@ -599,6 +599,9 @@ static void x_input_poll(void *data)
       x11->mouse_delta_x    = win_x - centre_x;
       x11->mouse_delta_y    = win_y - centre_y;
 
+      x11->mouse_delta_x    = x11->mouse_delta_x * 10;
+      x11->mouse_delta_y    = x11->mouse_delta_y * 10;
+
       /* Get effective 'absolute' pointer location
        * (last position + delta, bounded by current
        * application window dimensions) */
