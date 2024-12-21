@@ -706,7 +706,7 @@ static void udev_mouse_set_x(udev_input_mouse_t *mouse, int32_t x, bool abs)
    }
    else
    {
-      mouse->x_rel += x;
+      mouse->x_rel += x * 10;
       if (video_driver_get_viewport_info(&vp))
       {
          mouse->x_abs += x;
@@ -749,7 +749,7 @@ static void udev_mouse_set_y(udev_input_mouse_t *mouse, int32_t y, bool abs)
    }
    else
    {
-      mouse->y_rel += y;
+      mouse->y_rel += y * 10;
       if (video_driver_get_viewport_info(&vp))
       {
          mouse->y_abs += y;
